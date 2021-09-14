@@ -39,6 +39,8 @@ router.post("/add", async (req, res) => {
         res.status(400).send("Algo errado com a tarefa, tente novamente");
         console.error(err);
       });
+  } else {
+    res.status(400).send("Algo errado com a tarefa, tente novamente");
   }
 });
 
@@ -59,6 +61,8 @@ router.put("/update/id", async (req, res) => {
         res.status(400).send("Algo errado com a tarefa, tente novamente");
         console.error(err);
       });
+  } else {
+    res.status(400).send("Algo errado com a tarefa, tente novamente");
   }
 });
 
