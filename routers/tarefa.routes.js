@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
     });
 });
 
-router.get("/byId/:id", async (req, res) => {
+router.get("/FindById/:id", async (req, res) => {
   await Tarefa.findOne({ _id: req.params.id })
     .then((tarefa) => {
       res.send(tarefa);
