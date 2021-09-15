@@ -46,25 +46,14 @@ router.post("/add", async (req, res) => {
 });
 
 router.put("/update/:id", async (req, res) => {
-  if (
-    !Tarefa ||
-    !Tarefa.titulo ||
-    !Tarefa.descrição ||
-    !Tarefa.prioridade ||
-    !Tarefa.status ||
-    !Tarefa.prazo
-  ) {
-    await Tarefa.updateOne({ _id: req.params.id }, req.body)
-      .then(() => {
-        res.status(200).send("Tarefa atualizada com sucesso");
-      })
-      .catch((err) => {
-        res.status(400).send("Algo errado com a tarefa, tente novamente");
-        console.error(err);
-      });
-  } else {
-    res.status(400).send("Algo errado com a tarefa, tente novamente");
-  }
+  await Tarefa.updateOne({ _id: req.params.id }, req.body)
+    .then(() => {
+      res.status(200).send("Tarefa atualizada com sucesso");
+    })
+    .catch((err) => {
+      res.status(400).send("Algo errado com a tarefa, tente novamente");
+      console.error(err);
+    });
 });
 
 router.delete("/delete/:id", async (req, res) => {
