@@ -13,7 +13,7 @@ const corsOptions = {
 };
 
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(cors());
 
 const db_url = process.env.DB_URL;
 const db_user = process.env.DB_USER;
