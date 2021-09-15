@@ -18,6 +18,7 @@ router.get("/FindById/:id", async (req, res) => {
       res.send(tarefa);
     })
     .catch((err) => {
+      res.status(404).send("Não encontrado");
       console.error(err);
     });
 });
@@ -72,7 +73,7 @@ router.delete("/delete/:id", async (req, res) => {
       res.status(200).send("Tarefa deletada com sucesso");
     })
     .catch((err) => {
-      res.status(400).send("Algo errado com a tarefa, tente novamente");
+      res.status(404).send("Não encontrado");
       console.error(err);
     });
 });
