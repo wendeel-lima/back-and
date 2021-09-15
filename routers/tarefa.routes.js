@@ -44,7 +44,7 @@ router.post("/add", async (req, res) => {
   }
 });
 
-router.put("/update/id", async (req, res) => {
+router.put("/update/:id", async (req, res) => {
   if (
     !Tarefa ||
     !Tarefa.titulo ||
