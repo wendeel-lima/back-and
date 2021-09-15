@@ -66,7 +66,7 @@ router.put("/update/id", async (req, res) => {
   }
 });
 
-router.delete("/delete", async (req, res) => {
+router.delete("/delete/id", async (req, res) => {
   await Tarefa.delete({ _id: req.params.id })
     .then(() => {
       res.status(200).send("Tarefa deletada com sucesso");
