@@ -8,12 +8,12 @@ const Conn = require("./models/conn/tarefa.conn");
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://app-front-and-patrick.herokuapp.com/",
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 const db_url = process.env.DB_URL;
 const db_user = process.env.DB_USER;
